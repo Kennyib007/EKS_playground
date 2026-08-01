@@ -22,7 +22,7 @@ The development Terraform root now provisions the network foundation and include
 ## Initialize
 
 1. Apply `terraform/bootstrap/state` once in the target AWS account.
-2. Copy `backend.hcl.example` to `backend.hcl` and replace `ACCOUNT_ID`.
+2. Copy `backend.hcl.example` to `backend.hcl` and replace `ACCOUNT_ID` with your AWS account ID, or use the repository example file as a starting point.
 3. Copy `terraform.tfvars.example` to `terraform.tfvars` and review its values.
 4. Run `terraform init -backend-config=backend.hcl`.
 5. Review `terraform plan` before applying.
@@ -33,3 +33,4 @@ The development Terraform root now provisions the network foundation and include
 
 - Development defaults to one NAT gateway to reduce cost. Set `single_nat_gateway = false` when zonal NAT resilience is required.
 - The demo workload and ingress manifests are intended to be applied after the cluster is provisioned and Argo CD is reachable.
+- For a full live-environment test, run `scripts/deploy-dev.sh` to apply the stack and `scripts/destroy-dev.sh` to remove it again with Terraform destroy.

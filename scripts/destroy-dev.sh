@@ -6,8 +6,4 @@ TF_DIR="$ROOT_DIR/terraform/environments/development"
 
 cd "$TF_DIR"
 terraform init -reconfigure -backend-config=backend.hcl
-terraform plan -out=tfplan
-terraform apply -auto-approve tfplan
-
-echo "Terraform apply complete."
-echo "Next: install Argo CD and apply the bootstrap manifests in gitops/bootstrap."
+terraform destroy -auto-approve
