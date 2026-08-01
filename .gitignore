@@ -1,10 +1,16 @@
 # Terraform
 **/.terraform/*
+**/.terraform/
 *.tfstate
 *.tfstate.*
 *.tfplan
+*.tfplan.*
 backend.hcl
+backend.hcl.*
 terraform.tfvars
+terraform.tfvars.*
+*.auto.tfvars
+*.auto.tfvars.json
 crash.log
 crash.*.log
 .terraformrc
@@ -15,16 +21,24 @@ override.tf.json
 *_override.tf.json
 
 # Local inputs and credentials
-*.auto.tfvars
-*.auto.tfvars.json
 *.pem
 *.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.p8
+*.pub
+*.ovpn
 .env
 .env.*
 !.env.example
 
 # Kubernetes and Helm
 kubeconfig*
+*.kubeconfig
 secrets.yaml
 **/charts/
 
@@ -33,3 +47,4 @@ secrets.yaml
 .idea/
 .vscode/
 *.swp
+*.swo

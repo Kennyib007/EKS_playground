@@ -34,6 +34,18 @@ variable "enable_flow_logs" {
   default     = false
 }
 
+variable "cluster_version" {
+  description = "Kubernetes version for the development EKS cluster. Use 1.27 for broad AWS account/region compatibility."
+  type        = string
+  default     = "1.27"
+}
+
+variable "enable_auto_mode" {
+  description = "Explicitly enable EKS Auto Mode. Leave false for the standard managed node group deployment."
+  type        = bool
+  default     = false
+}
+
 variable "tags" {
   description = "Additional tags applied to development resources."
   type        = map(string)

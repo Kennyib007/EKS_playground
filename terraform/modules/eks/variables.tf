@@ -4,9 +4,15 @@ variable "cluster_name" {
 }
 
 variable "cluster_version" {
-  description = "Kubernetes version to deploy for the EKS control plane."
+  description = "Kubernetes version to deploy for the EKS control plane. Use 1.27 for broad AWS account/region compatibility."
   type        = string
-  default     = "1.29"
+  default     = "1.27"
+}
+
+variable "enable_auto_mode" {
+  description = "Explicitly disable EKS Auto Mode for this cluster. Set to true only if your account/region supports it and you want Auto Mode enabled."
+  type        = bool
+  default     = false
 }
 
 variable "subnet_ids" {

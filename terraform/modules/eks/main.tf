@@ -38,6 +38,13 @@ resource "aws_eks_cluster" "this" {
 
   enabled_cluster_log_types = var.enabled_cluster_log_types
 
+  dynamic "compute_config" {
+    for_each = var.enable_auto_mode ? [1] : []
+    content {
+      enabled = true
+    }
+  }
+
   vpc_config {
     subnet_ids              = var.subnet_ids
     endpoint_private_access = true

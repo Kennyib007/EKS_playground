@@ -1,10 +1,13 @@
-aws_region         = "us-east-2"
-project_name       = "eks-platform"
-environment        = "development"
-vpc_cidr           = "10.20.0.0/16"
-single_nat_gateway = true
-enable_flow_logs   = false
+# Replace these values before running the deployment.
+aws_region         = "us-east-2"              # Example: change to your target AWS region
+project_name       = "eks-platform"          # Example: change to your preferred project name
+environment        = "development"          # Example: change to your target environment name
+vpc_cidr           = "10.20.0.0/16"         # Example: change to a VPC CIDR that fits your network plan
+single_nat_gateway = true                   # Example: set to false if you want one NAT gateway per AZ
+enable_flow_logs   = false                  # Example: set to true if you want VPC flow logs enabled
+cluster_version    = "1.27"                 # Example: use 1.27 for broad AWS account/region compatibility
+enable_auto_mode   = false                  # Example: leave false for the standard managed node group flow
 
 tags = {
-  Owner = "platform-team"
+  Owner = "platform-team"                   # Example: change to your team or owner name
 }

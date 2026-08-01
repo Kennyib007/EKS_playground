@@ -23,7 +23,7 @@ The development Terraform root now provisions the network foundation and include
 
 1. Apply `terraform/bootstrap/state` once in the target AWS account.
 2. Copy `backend.hcl.example` to `backend.hcl` and replace `ACCOUNT_ID` with your AWS account ID, or use the repository example file as a starting point.
-3. Copy `terraform.tfvars.example` to `terraform.tfvars` and review its values.
+3. Copy `terraform.tfvars.example` to `terraform.tfvars` and review its values. The default development target is Kubernetes 1.28 for broader AWS account compatibility.
 4. Run `terraform init -backend-config=backend.hcl`.
 5. Review `terraform plan` before applying.
 6. Apply `terraform apply` to create the development VPC and EKS cluster.

@@ -23,7 +23,9 @@ module "network" {
 module "eks" {
   source = "../../modules/eks"
 
-  cluster_name = local.cluster_name
-  subnet_ids   = concat(module.network.public_subnet_ids, module.network.private_subnet_ids)
-  tags         = local.common_tags
+  cluster_name     = local.cluster_name
+  cluster_version  = var.cluster_version
+  enable_auto_mode = var.enable_auto_mode
+  subnet_ids       = concat(module.network.public_subnet_ids, module.network.private_subnet_ids)
+  tags             = local.common_tags
 }

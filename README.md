@@ -24,6 +24,17 @@ Use the development environment guide in `terraform/environments/development/REA
 
 Before running the live deployment, configure AWS credentials in your shell or via the AWS CLI:
 
+The values you should customize before testing are clearly marked in the example files:
+- [terraform/environments/development/terraform.tfvars.example](terraform/environments/development/terraform.tfvars.example)
+- [terraform/environments/development/backend.hcl.example](terraform/environments/development/backend.hcl.example)
+
+Pay special attention to:
+- project name and environment name
+- AWS region
+- VPC CIDR
+- Terraform state bucket name
+- any team or owner tags
+
 ```bash
 export AWS_REGION=us-east-2
 export AWS_DEFAULT_REGION=us-east-2
@@ -38,7 +49,6 @@ key          = "development/platform.tfstate"
 region       = "us-east-2"
 encrypt      = true
 use_lockfile = true
-kms_key_id   = "alias/eks-platform-terraform-state"
 ```
 
-Replace the bucket value with your actual Terraform state bucket name and account ID before running the deployment scripts.
+Replace the bucket value with your actual Terraform state bucket name and account ID before running the deployment scripts. If you want to use a custom KMS key later, you can add a matching KMS entry once the alias exists.
