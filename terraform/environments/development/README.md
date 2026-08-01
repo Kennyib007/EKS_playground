@@ -29,4 +29,7 @@ The development Terraform root now provisions the network foundation and include
 6. Apply `terraform apply` to create the development VPC and EKS cluster.
 7. Optionally use `scripts/deploy-dev.sh` as a convenience wrapper for the Terraform apply flow.
 
-Development defaults to one NAT gateway to reduce cost. Set `single_nat_gateway = false` when zonal NAT resilience is required.
+## Operational notes
+
+- Development defaults to one NAT gateway to reduce cost. Set `single_nat_gateway = false` when zonal NAT resilience is required.
+- The demo workload and ingress manifests are intended to be applied after the cluster is provisioned and Argo CD is reachable.
