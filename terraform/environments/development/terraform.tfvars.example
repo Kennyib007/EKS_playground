@@ -5,7 +5,7 @@ environment        = "development"          # Example: change to your target env
 vpc_cidr           = "10.20.0.0/16"         # Example: change to a VPC CIDR that fits your network plan
 single_nat_gateway = true                   # Example: set to false if you want one NAT gateway per AZ
 enable_flow_logs   = false                  # Example: set to true if you want VPC flow logs enabled
-cluster_version    = "1.27"                 # Example: use 1.27 for broad AWS account/region compatibility
+cluster_version    = "1.34"                 # Example: use a version in EKS standard support for your target region
 enable_auto_mode   = false                  # Example: leave false for the standard managed node group flow
 
 tags = {

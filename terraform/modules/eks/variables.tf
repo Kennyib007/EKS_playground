@@ -4,9 +4,9 @@ variable "cluster_name" {
 }
 
 variable "cluster_version" {
-  description = "Kubernetes version to deploy for the EKS control plane. Use 1.27 for broad AWS account/region compatibility."
+  description = "Kubernetes version to deploy for the EKS control plane."
   type        = string
-  default     = "1.27"
+  default     = "1.34"
 }
 
 variable "enable_auto_mode" {
@@ -71,7 +71,7 @@ variable "node_group_capacity_type" {
 variable "node_group_ami_type" {
   description = "AMI family to use for the node group."
   type        = string
-  default     = "AL2_x86_64"
+  default     = "AL2023_x86_64_STANDARD"
 }
 
 variable "node_group_labels" {
