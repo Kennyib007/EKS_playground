@@ -35,9 +35,9 @@ variable "enable_flow_logs" {
 }
 
 variable "cluster_version" {
-  description = "Kubernetes version for the development EKS cluster. Use 1.27 for broad AWS account/region compatibility."
+  description = "Kubernetes version for the development EKS cluster."
   type        = string
-  default     = "1.27"
+  default     = "1.34"
 }
 
 variable "enable_auto_mode" {
